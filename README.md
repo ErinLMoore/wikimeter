@@ -1,2 +1,5 @@
-# wikimeter
-it is a wikimeter
+## This is a project that can match the stress and/or rhyme of a given phrase against a large corpus of phrases.
+
+Ok this process has two steps. One, you need to generate pickle files from whatever source you want to be able to compare phrases to. Included is a sample file of the common names of birds in csv format. You can use any csv or line-delimited text file. If you want to be able to use wikipedia article titles, go to https://dumps.wikimedia.org/enwiki/20180320/ and download the one labled 'List of page titles in main namespace'. To create the pickle, run src/createPickle.py after replacing the filenames in the script (if necessary). Sorry these don't take command line args. These commands can take a few minutes if your source file is large.
+
+Step two is comparing your desired phrase against these pickles. Sample code for this is in src/generate_lists.py. The birds list won't find many things that match both stress and rhyme, but I recommend testing the whole process out on the smaller birds file first.
